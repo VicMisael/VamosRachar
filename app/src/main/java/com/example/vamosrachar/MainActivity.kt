@@ -3,14 +3,18 @@ package com.example.vamosrachar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var tts: TextToSpeech? = null
 
     var valor = 0.0;
     var numpessoas:Int = 0;
@@ -23,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val preco = findViewById<EditText>(R.id.preco)
         val nPessoasField = findViewById<EditText>(R.id.pessoas)
         val totalPorPessoa = findViewById<TextView>(R.id.total);
+
 
         fun calculate() {
             if (numpessoas > 0) {
@@ -44,9 +49,18 @@ class MainActivity : AppCompatActivity() {
             val shareIntent = Intent.createChooser(sendIntent, "Vamos Rachar")
             startActivity(shareIntent)
         }
+        val textToSpeech=TextToSpeech(this) {
+            if (it != TextToSpeech.ERROR) {
+                Log.e("Rachar","ERRO TTS")
+            }
+        };
+        textToSpeech.language=Locale.forLanguageTag("PT-BR");
         listenBtn.setOnClickListener{
-
+            textToSpeech.speak(
+                "O valor a ser pago por cada um das $numpessoas pessoas são $total.String.format(\"%.${2}f\", total).format(\".\",\",\") reais",
+                TextToSpeech.QUEUE_FLUSH,null,null);
         }
+
         preco.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
 
