@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         shareBtn.setOnClickListener{
-           val text= "O seu valor a ser pago é"+String.format("%.${2}f", total).format(".",",")
+           val text= "O seu valor a ser pago é "+String.format("%.${2}f", total).format(".",",")
             Log.e("Rachar",text)
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
