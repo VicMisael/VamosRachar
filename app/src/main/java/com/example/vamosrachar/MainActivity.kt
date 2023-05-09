@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
+import kotlin.math.floor
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         shareBtn.setOnClickListener{
-           val text= "O seu valor a ser pago é"+String.format("%.${2}f", total).format(".",",")
+           val text= "O seu valor a ser pago é R$"+String.format("%.${2}f", total).format(".",",")
             Log.e("Rachar",text)
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -56,8 +57,11 @@ class MainActivity : AppCompatActivity() {
         };
         textToSpeech.language=Locale.forLanguageTag("PT-BR");
         listenBtn.setOnClickListener{
+            //val fal=String.format("%.${2}f", total).format(".",",")
+            val cents:Int = floor((total-Math.floor(total))*10).toInt()
+            val reais:Int = floor(total).toInt()
             textToSpeech.speak(
-                "O valor a ser pago por cada um das $numpessoas pessoas são $total.String.format(\"%.${2}f\", total).format(\".\",\",\") reais",
+                "O valor a ser pago por cada um das $numpessoas pessoas são $reais reais e $cents centavos",
                 TextToSpeech.QUEUE_FLUSH,null,null);
         }
 
