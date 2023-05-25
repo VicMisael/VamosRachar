@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
                 total = valor / numpessoas;
                 totalPorPessoa.text = String.format("%.${2}f", total).format(".",",")
             } else {
-                totalPorPessoa.text = "O número de pessoas deve ser maior que 0";
+                totalPorPessoa.text = getString(R.string.bigger_than_0);
             }
         }
         shareBtn.setOnClickListener{
-           val text= "O seu valor a ser pago é R$"+String.format("%.${2}f", total).format(".",",")
+           val text= getString(R.string.your_paid)+String.format("%.${2}f", total).format(".",",")
             Log.e("Rachar",text)
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 type = "text/plain"
             }
 
-            val shareIntent = Intent.createChooser(sendIntent, "Vamos Rachar")
+            val shareIntent = Intent.createChooser(sendIntent, getString(R.string.app_name))
             startActivity(shareIntent)
         }
         val textToSpeech=TextToSpeech(this) {
@@ -55,13 +55,14 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Rachar","ERRO TTS")
             }
         };
-        textToSpeech.language=Locale.forLanguageTag("PT-BR");
+        textToSpeech.language=Locale.getDefault();
         listenBtn.setOnClickListener{
             //val fal=String.format("%.${2}f", total).format(".",",")
             val cents:Int = floor((total-Math.floor(total))*10).toInt()
             val reais:Int = floor(total).toInt()
+            val out="O valor a ser pago por cada um das $numpessoas pessoas são $reais reais e $cents centavos"
             textToSpeech.speak(
-                "O valor a ser pago por cada um das $numpessoas pessoas são $reais reais e $cents centavos",
+                out,
                 TextToSpeech.QUEUE_FLUSH,null,null);
         }
 
@@ -106,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                     calculate();
                 } catch (e: java.lang.NumberFormatException) {
                     // handler
-                    totalPorPessoa.text="Insira um valor válido"
+                    totalPorPessoa.text=getString(R.string.insert_valid)
                     Log.e("PDM23", "Formato invalido");
                 }
             }

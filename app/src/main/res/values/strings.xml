@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">VamosRachar</string>
+    <string name="your_paid">O seu valor a ser pago é R$</string>
+    <string name="app_name">Vamos Rachar</string>
+    <string name="currency">R$</string>
+    <string name="total_por_pessoa">Total Por Pessoa</string>
+    <string name="vamos_rachar">VAMOS RACHAR!</string>
+    <string name="insert_valid">Insira um valor válido</string>
+    <string name="bigger_than_0">O número de pessoas deve ser maior que 0</string>
+    <string name="app_name1">Vamos Rachar</string>
 </resources>

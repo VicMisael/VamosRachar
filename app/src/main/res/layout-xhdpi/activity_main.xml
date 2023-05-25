@@ -17,48 +17,11 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/preco"
+        app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352"
+        app:layout_constraintVertical_bias="0.441"
         tools:text="R$" />
-
-    <EditText
-        android:id="@+id/preco"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pessoas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/precoText"
-        app:layout_constraintVertical_bias="0.044"
-        app:srcCompat="@drawable/blk_baseline_people_24" />
-
-    <EditText
-        android:id="@+id/pessoas"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preco"
-        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/precoText3"
@@ -71,10 +34,24 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/total"
+        app:layout_constraintHorizontal_bias="0.702"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.045"
+        app:layout_constraintVertical_bias="0.054"
         tools:text="R$" />
+
+    <EditText
+        android:id="@+id/pessoas"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preco"
+        app:layout_constraintVertical_bias="0.057" />
 
     <TextView
         android:id="@+id/total"
@@ -85,22 +62,48 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pessoas"
-        app:layout_constraintVertical_bias="0.043"
+        app:layout_constraintVertical_bias="0.054"
         tools:text="Total Por Pessoa" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pessoas"
+        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precoText"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/blk_baseline_people_24" />
+
+    <EditText
+        android:id="@+id/preco"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/listen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/preco"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -110,9 +113,10 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/listen"
         app:layout_constraintEnd_toStartOf="@+id/listen"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/listen"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="?attr/actionModeShareDrawable" />
 
     <TextView

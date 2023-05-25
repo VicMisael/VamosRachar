@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/precoText"
@@ -17,9 +16,10 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/preco"
+        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352"
+        app:layout_constraintVertical_bias="0.365"
         tools:text="R$" />
 
     <EditText
@@ -30,10 +30,10 @@
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintVertical_bias="0.365" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -42,9 +42,10 @@
         android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pessoas"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/precoText"
-        app:layout_constraintVertical_bias="0.044"
+        app:layout_constraintVertical_bias="0.046"
         app:srcCompat="@drawable/blk_baseline_people_24" />
 
     <EditText
@@ -55,10 +56,10 @@
         android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/preco"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <TextView
         android:id="@+id/precoText3"
@@ -71,9 +72,10 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/total"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.045"
+        app:layout_constraintVertical_bias="0.044"
         tools:text="R$" />
 
     <TextView
@@ -85,10 +87,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pessoas"
-        app:layout_constraintVertical_bias="0.043"
+        app:layout_constraintVertical_bias="0.045"
         tools:text="Total Por Pessoa" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -96,11 +98,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/share"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/preco"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.885"
         app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -108,11 +111,12 @@
         android:layout_width="57dp"
         android:layout_height="55dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/listen"
-        app:layout_constraintEnd_toStartOf="@+id/listen"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/listen"
+        app:layout_constraintBottom_toBottomOf="@+id/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toEndOf="@+id/pessoas"
+        app:layout_constraintTop_toTopOf="@+id/pessoas"
+        app:layout_constraintVertical_bias="0.474"
         app:srcCompat="?attr/actionModeShareDrawable" />
 
     <TextView
@@ -123,10 +127,10 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
+        app:layout_constraintVertical_bias="0.085"
         tools:text="VAMOS RACHAR!" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -143,5 +147,4 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

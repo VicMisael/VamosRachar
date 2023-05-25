@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_paid">Your part is $</string>
+    <string name="app_name">Let\'s Split</string>
+    <string name="currency">$</string>
+    <string name="total_por_pessoa">Total for each</string>
+    <string name="vamos_rachar">LET\'S SPLIT!</string>
+    <string name="insert_valid">Insert a valid value</string>
+    <string name="bigger_than_0">O número de pessoas deve ser maior que 0</string>
+    <string name="app_name1">Vamos Rachar</string>
+</resources>
